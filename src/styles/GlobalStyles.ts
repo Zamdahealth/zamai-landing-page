@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-top: 90px;
+    font-family: sans-serif;
+    background: #fff;
   }
 `;
+
+export default GlobalStyles;
