@@ -3,14 +3,10 @@ import styled from "styled-components";
 export const HeroContainer = styled.section`
   width: 100%;
   min-height: 100vh;
-
   background: linear-gradient(180deg, #f2faf6 0%, #f9fbfa 100%);
-
-  padding-top: 60px;
-
+  padding-top: 70px;
   display: flex;
   justify-content: center;
-
   margin-bottom: 100px;
 
   @media (max-width: 768px) {
@@ -20,15 +16,13 @@ export const HeroContainer = styled.section`
 
 export const HeroContent = styled.div`
   width: 100%;
-  max-width: 1440px;
-
-  padding: 10px 24px;
-
+  max-width: 1200px;
+  padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 40px;
+  overflow: visible; 
 
   /* TABLET */
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -40,7 +34,6 @@ export const HeroContent = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
-
     padding: 40px 24px;
   }
 `;
@@ -62,13 +55,9 @@ export const LeftSection = styled.div`
 
 export const Heading = styled.h1`
   font-size: 60px;
-
   font-weight: 600;
-
   letter-spacing: -3%;
-
   color: #111111;
-
   margin-bottom: 24px;
 
   /* TABLET */
@@ -110,24 +99,17 @@ export const Highlight = styled.span`
 
 export const Description = styled.p`
   font-size: 18px;
-
   font-weight: 500;
-
   color: #616161;
-
   letter-spacing: -1.5%;
-
   line-height: 28px;
-
   max-width: 520px;
-
   margin-bottom: 36px;
 
   /* TABLET */
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 16px;
     line-height: 24px;
-
     max-width: 460px;
   }
 
@@ -143,7 +125,6 @@ export const Description = styled.p`
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-
   gap: 20px;
 
   /* TABLET */
@@ -160,18 +141,13 @@ export const ButtonContainer = styled.div`
 export const PrimaryButton = styled.button`
   width: 180px;
   height: 54px;
-
   border: none;
   border-radius: 10px;
-
   background: #022c22;
   color: #ffffff;
-
   font-size: 15px;
   font-weight: 600;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 
   &:hover {
@@ -194,23 +170,16 @@ export const PrimaryButton = styled.button`
 export const SecondaryButton = styled.button`
   width: 180px;
   height: 54px;
-
   border-radius: 10px;
   border: 1px solid #dcdcdc;
-
   background: #ffffff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   font-size: 15px;
   font-weight: 500;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 
   &:hover {
@@ -237,40 +206,32 @@ export const ButtonIcon = styled.img`
 
 export const RightSection = styled.div`
   flex: 1;
-
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  right: -75px; 
 
-  /* TABLET */
   @media (min-width: 769px) and (max-width: 1024px) {
-    align-items: center;
+    right: -32px;
   }
 
-  /* MOBILE */
   @media (max-width: 768px) {
     width: 100%;
     justify-content: flex-end;
+    right: -24px;
   }
 `;
-
 export const HeroImage = styled.img`
   width: 100%;
-  max-width: 520px;
-
+  max-width: 550px;
   object-fit: contain;
+  margin: 0;
 
-  margin-right: -24px;
-
-  /* TABLET */
   @media (min-width: 769px) and (max-width: 1024px) {
-    max-width: 420px;
-    margin-right: -10px;
+    max-width: 450px;
   }
 
-  /* MOBILE */
   @media (max-width: 768px) {
     max-width: 100%;
-
-    margin-right: -24px;
   }
 `;
