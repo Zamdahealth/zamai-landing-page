@@ -23,6 +23,9 @@ import {
   FeatureDescription,
   RightSection,
   PharmacyImage,
+  MobileHeading,
+  DesktopHeading,
+  MobileBreak,
 } from "./styles";
 
 const features = [
@@ -71,31 +74,34 @@ const ForPharmacies = () => {
           <Label>For Pharmacies</Label>
 
           <Heading>
-            The Smartest Tool Your
-            <br />
-            Pharmacy Never Had
+            <DesktopHeading>
+              The Smartest Tool Your
+              <br />
+              Pharmacy Never Had
+            </DesktopHeading>
+
+            <MobileHeading>
+              The Smartest Tool Your
+              <br />
+              Pharmacy Never Had
+            </MobileHeading>
           </Heading>
 
           <Description>
-            Protect patients. Grow revenue. Run a smarter pharmacy.
+            Protect patients. Grow revenue. Run a
+            <MobileBreak />
+             smarter pharmacy.
           </Description>
 
           <FeaturesList>
             {features.map((feature) => (
               <FeatureItem key={feature.title}>
-                <FeatureIcon
-                  src={feature.icon}
-                  alt={feature.title}
-                />
+                <FeatureIcon src={feature.icon} alt={feature.title} />
 
                 <FeatureContent>
-                  <FeatureTitle>
-                    {feature.title}
-                  </FeatureTitle>
+                  <FeatureTitle>{feature.title}</FeatureTitle>
 
-                  <FeatureDescription>
-                    {feature.description}
-                  </FeatureDescription>
+                  <FeatureDescription>{feature.description}</FeatureDescription>
                 </FeatureContent>
               </FeatureItem>
             ))}
@@ -103,10 +109,7 @@ const ForPharmacies = () => {
         </LeftSection>
 
         <RightSection>
-          <PharmacyImage
-            src={pharmacyImage}
-            alt="Pharmacy Dashboard"
-          />
+          <PharmacyImage src={pharmacyImage} alt="Pharmacy Dashboard" />
         </RightSection>
       </SectionContent>
     </SectionContainer>

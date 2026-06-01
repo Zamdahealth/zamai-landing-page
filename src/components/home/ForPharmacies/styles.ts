@@ -8,7 +8,7 @@ export const SectionContainer = styled.section`
   display: flex;
   justify-content: center;
 
-  background: #F9F9FA;
+  background: #f9f9fa;
 
   @media (max-width: 768px) {
     padding: 80px 24px;
@@ -45,33 +45,45 @@ export const LeftSection = styled.div`
 `;
 
 export const Label = styled.p`
-  font-size: 13px;
-  font-weight: 500;
   width: 130px;
   height: 36px;
-  color: #0a5f55;
-  border-radius: 100px;
-  background: #ECFFFE;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 10px 16px;
-  gap: 10px;
+
+  border-radius: 100px;
+
+  background: #ecfffe;
+
+  color: #0a5f55;
+
+  font-size: 13px;
+  font-weight: 500;
+
   margin-bottom: 20px;
 
   @media (max-width: 768px) {
-    text-align: center;
+    margin: 0 auto 20px auto;
   }
 `;
 
 export const Heading = styled.h2`
   font-size: 45px;
   font-weight: 600;
+
   line-height: 44px;
   letter-spacing: -3%;
+
   color: #111111;
+
   margin-bottom: 12px;
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    font-size: 42px;
-    line-height: 46px;
+    font-size: 36px;
+    line-height: 40px;
   }
 
   @media (max-width: 768px) {
@@ -82,11 +94,29 @@ export const Heading = styled.h2`
   }
 `;
 
+export const DesktopHeading = styled.span`
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const MobileHeading = styled.span`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
 export const Description = styled.p`
+  width: 100%;
+  max-width: 478px;
+
   font-size: 18px;
   font-weight: 500;
-  width: 478px;
-  height: 20px;
+
   color: #616161;
 
   line-height: 20px;
@@ -99,18 +129,31 @@ export const Description = styled.p`
   }
 
   @media (max-width: 768px) {
+    max-width: 100%;
+
     text-align: center;
 
     font-size: 15px;
     line-height: 24px;
   }
 `;
+export const MobileBreak = styled.br`
+  display: none;
 
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
 export const FeaturesList = styled.div`
   display: flex;
   flex-direction: column;
 
   gap: 24px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 export const FeatureItem = styled.div`
@@ -118,21 +161,48 @@ export const FeatureItem = styled.div`
   align-items: flex-start;
 
   gap: 14px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 360px;
+
+    background: #ffffff;
+
+    padding: 20px 16px;
+
+    border-radius: 16px;
+    border: 1px solid #eef0f2;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: left;
+  }
 `;
 
 export const FeatureIcon = styled.img`
   width: 54px;
   height: 45px;
-  border-radius: 8px;
-  flex-shrink: 0;
-  padding: 8px;
-  gap: 10px;
-  object-fit: contain;
-`;
 
+  padding: 8px;
+
+  border-radius: 8px;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  @media (max-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
+`;
 export const FeatureContent = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
 `;
 
 export const FeatureTitle = styled.h4`
@@ -141,12 +211,14 @@ export const FeatureTitle = styled.h4`
 
   line-height: 28px;
   letter-spacing: -3%;
+
   color: #222222;
 
   margin-bottom: 4px;
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    font-size: 17px;
+    font-size: 20px;
+    line-height: 24px;
   }
 
   @media (max-width: 768px) {
@@ -173,28 +245,27 @@ export const RightSection = styled.div`
 
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 
   @media (max-width: 768px) {
-    width: 100%;
-    justify-content: center;
+    display: none;
   }
 `;
 
 export const PharmacyImage = styled.img`
   width: 100%;
   max-width: 620px;
-  height: 600px;
-  margin-top: 100px;
+
+  height: auto;
 
   object-fit: contain;
 
   display: block;
 
+  margin-top: 40px;
+
   @media (min-width: 769px) and (max-width: 1024px) {
     max-width: 480px;
-  }
-
-  @media (max-width: 768px) {
-    max-width: 100%;
+    margin-top: 20px;
   }
 `;
