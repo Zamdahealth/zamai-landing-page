@@ -8,6 +8,7 @@ import {
   Badge,
   Heading,
   Description,
+  HeaderContainer,
   ApiCard,
   ApiTitle,
   ApiDescription,
@@ -46,19 +47,21 @@ const apiCards = [
 const ForDevelopers = () => {
   return (
     <Section>
-      <Badge>For Developers</Badge>
+      <HeaderContainer>
+        <Badge>For Developers</Badge>
 
-      <Heading>
-        Embed Medical Intelligence Into
-        <br />
-        Anything You Build
-      </Heading>
+        <Heading>
+          Embed Medical Intelligence Into
+          <br />
+          Anything You Build
+        </Heading>
 
-      <Description>
-        The Zam AI API gives your platform access to drug databases, interaction
-        checkers, symptom analysis, multilingual health responses, and
-        predictive health intelligence — all through clean REST endpoints.
-      </Description>
+        <Description>
+          The Zam AI API gives your platform access to drug databases, interaction
+          checkers, symptom analysis, multilingual health responses, and
+          predictive health intelligence — all through clean REST endpoints.
+        </Description>
+      </HeaderContainer>
 
       <Content>
         <LeftColumn>

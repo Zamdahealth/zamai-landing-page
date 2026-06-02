@@ -5,6 +5,10 @@ export const Section = styled.section`
   background: #02241f;
   color: #fff;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   @media (min-width: 769px) and (max-width: 1024px) {
     padding: 100px 40px;
   }
@@ -17,6 +21,7 @@ export const Section = styled.section`
 export const Badge = styled.span`
   display: inline-flex;
   align-items: center;
+
   padding: 8px 16px;
   margin-bottom: 24px;
   border-radius: 100px;
@@ -39,6 +44,7 @@ export const Heading = styled.h2`
   line-height: 44px;
   letter-spacing: -3%;
   color: #ffffff;
+  text-align: left;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 38px;
@@ -59,6 +65,7 @@ export const Description = styled.p`
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
+  text-align: left;
 
   color: #dee3e9;
 
@@ -75,10 +82,24 @@ export const Description = styled.p`
   }
 `;
 
+export const HeaderContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+`;
+
 export const Content = styled.div`
   display: flex;
   gap: 40px;
   margin-top: 60px;
+  width: 100%;
+  max-width: 1200px;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     gap: 24px;
@@ -95,6 +116,7 @@ export const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
+  align-items: center;
 `;
 
 export const RightColumn = styled.div`
@@ -102,10 +124,7 @@ export const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  @media (max-width: 768px) {
-    align-items: center;
-  }
+  align-items: center;
 `;
 
 export const ApiCard = styled.div`
@@ -198,7 +217,6 @@ interface ButtonProps {
 export const Button = styled.button<ButtonProps>`
   width: 100%;
   max-width: 425px;
-  margin-left: 50px;
   height: 64px;
   padding: 22px 32px;
   border-radius: 8px;
