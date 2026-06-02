@@ -1,5 +1,6 @@
 import ForClinicians from "./components/home/ForClinicians/ForClinicians";
 import ForDevelopers from "./components/home/ForDevelopers/ForDevelopers";
+import ForPatients from "./components/home/ForPatients/ForPatients";
 import ForPharmacies from "./components/home/ForPharmacies/ForPharmacies";
 import Hero from "./components/home/Hero/Hero";
 import PharmacyFeatures from "./components/home/PharmacyFeatures/PharmacyFeatures";
@@ -17,6 +18,7 @@ function App() {
       <ForPharmacies />
       <ForClinicians />
       <ForDevelopers />
+      <ForPatients />
     </>
   );
 }
