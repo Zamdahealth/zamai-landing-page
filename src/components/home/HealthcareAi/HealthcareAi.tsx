@@ -9,11 +9,14 @@ import {
   StatCard,
   StatNumber,
   StatText,
+  Container,
 } from "./styles";
 
 const HealthcareAI = () => {
   return (
     <Section>
+      <Container>
+
       <Content>
         {/* LEFT SIDE */}
         <Left>
@@ -64,6 +67,8 @@ const HealthcareAI = () => {
           </StatCard>
         </Right>
       </Content>
+      </Container>
+
     </Section>
   );
 };
