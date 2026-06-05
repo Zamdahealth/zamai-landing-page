@@ -84,11 +84,18 @@ export const NavItem = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: #111111;
+  text-decoration: none;
 
   transition: 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
 
   &:hover {
     opacity: 0.7;
+  }
+
+  &.active {
+    border-bottom: 2px solid #111111;
   }
 
   /* TABLET */
