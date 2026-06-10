@@ -75,6 +75,16 @@ export const SocialIcon = styled.img`
   border-radius: 6px;
   padding: 6px;
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(67, 255, 243, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px) scale(1.02);
+  }
 `;
 
 export const FooterColumn = styled.div`
@@ -101,9 +111,26 @@ export const FooterLink = styled.a`
   margin-bottom: 16px;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
 
   &:hover {
-    color: #ffffff;
+    color: #43fff3;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #43fff3;
+    transition: width 0.2s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 `;
 

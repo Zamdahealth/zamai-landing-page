@@ -3,6 +3,7 @@ import downlineIcon from "../../../assets/down_line.png";
 import generalInquiryIcon from "../../../assets/general-inquiry.png";
 import technicalSupportIcon from "../../../assets/technical-support.png";
 import partnershipIcon from "../../../assets/partnership.png";
+import RevealSection from "../../shared/RevealSection/RevealSection";
 
 import {
   Section,
@@ -57,8 +58,9 @@ const inquiryOptions = [
 
 const MessageUs = () => {
   return (
-    <Section>
-      <Container>
+    <RevealSection delay={180}>
+      <Section>
+        <Container>
         <LeftColumn>
           <Heading>How Can We Help?</Heading>
 
@@ -176,6 +178,7 @@ const MessageUs = () => {
         </RightColumn>
       </Container>
     </Section>
+    </RevealSection>
   );
 };
 

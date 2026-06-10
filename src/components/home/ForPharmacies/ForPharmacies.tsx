@@ -8,6 +8,7 @@ import expiryIcon from "../../../assets/expiry.png";
 import salesIcon from "../../../assets/sales.png";
 import profitabilityIcon from "../../../assets/profitability.png";
 
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   SectionContainer,
   SectionContent,
@@ -68,8 +69,9 @@ const features = [
 
 const ForPharmacies = () => {
   return (
-    <SectionContainer>
-      <SectionContent>
+    <RevealSection delay={180} direction="left">
+      <SectionContainer>
+        <SectionContent>
         <LeftSection>
           <Label>For Pharmacies</Label>
 
@@ -113,6 +115,7 @@ const ForPharmacies = () => {
         </RightSection>
       </SectionContent>
     </SectionContainer>
+    </RevealSection>
   );
 };
 

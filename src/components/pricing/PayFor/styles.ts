@@ -103,6 +103,16 @@ export const ActiveOption = styled.button`
   font-weight: 600;
 
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #023933;
+    box-shadow: 0 4px 12px rgba(1, 38, 33, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
 export const InactiveOption = styled.button`
@@ -123,6 +133,15 @@ export const InactiveOption = styled.button`
   gap: 8px;
 
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #022c22;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
 `;
 
 export const SaveBadge = styled.span`

@@ -92,6 +92,12 @@ export const StatCard = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(10px);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(94, 92, 92, 0.38);
+    
+  }
 `;
 
 export const StatNumber = styled.h3`

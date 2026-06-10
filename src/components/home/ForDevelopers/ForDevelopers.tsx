@@ -1,5 +1,6 @@
 import codePreview from "../../../assets/code-preview.png";
 
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
   Content,
@@ -46,8 +47,9 @@ const apiCards = [
 
 const ForDevelopers = () => {
   return (
-    <Section>
-      <HeaderContainer>
+    <RevealSection delay={120}>
+      <Section>
+        <HeaderContainer>
         <Badge>For Developers</Badge>
 
         <Heading>
@@ -87,6 +89,7 @@ const ForDevelopers = () => {
         </RightColumn>
       </Content>
     </Section>
+    </RevealSection>
   );
 };
 

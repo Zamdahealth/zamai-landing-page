@@ -72,6 +72,15 @@ export const QuestionRow = styled.button`
   justify-content: space-between;
   cursor: pointer;
   text-align: left;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  &:active {
+    background: #f0f0f0;
+  }
 
   @media (max-width: 768px) {
     padding: 20px;

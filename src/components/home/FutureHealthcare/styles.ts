@@ -94,10 +94,16 @@ export const PrimaryButton = styled.button`
   font-weight: 600;
 
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    opacity: 0.95;
+    background: #023933;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(1, 38, 33, 0.3);
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 
   @media (max-width: 768px) {
@@ -119,10 +125,17 @@ export const SecondaryButton = styled.button`
   font-weight: 600;
 
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     background: #fafafa;
+    border-color: #022c22;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 
   @media (max-width: 768px) {

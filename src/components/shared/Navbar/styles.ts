@@ -91,7 +91,8 @@ export const NavItem = styled.div`
   padding-bottom: 4px;
 
   &:hover {
-    opacity: 0.7;
+    color: #022c22;
+    border-bottom: 2px solid #022c22;
   }
 
   &.active {
@@ -143,10 +144,17 @@ export const SecondaryButton = styled.button`
 
   cursor: pointer;
 
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     background: #f8f8f8;
+    border-color: #022c22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   /* TABLET */
@@ -173,10 +181,16 @@ export const PrimaryButton = styled.button`
 
   cursor: pointer;
 
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    opacity: 0.9;
+    background: #023933;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(1, 38, 33, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   /* TABLET */

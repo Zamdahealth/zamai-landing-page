@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import plusIcon from "../../../assets/down_line.png";
 import minusIcon from "../../../assets/arrow-up.png";
+import RevealSection from "../../shared/RevealSection/RevealSection";
 
 import {
   Section,
@@ -45,19 +46,20 @@ const Faqs = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   return (
-    <Section>
-      <Container>
-        <Heading>
-          Frequently Asked Questions
-        </Heading>
+    <RevealSection delay={220}>
+      <Section>
+        <Container>
+          <Heading>
+            Frequently Asked Questions
+          </Heading>
 
-        <Description>
-          Quick answers before you reach out.
-        </Description>
+          <Description>
+            Quick answers before you reach out.
+          </Description>
 
-        <FaqList>
-          {faqData.map((faq, index) => (
-            <FaqItem key={faq.question}>
+          <FaqList>
+            {faqData.map((faq, index) => (
+              <FaqItem key={faq.question}>
               <QuestionRow
                 onClick={() =>
                   setActiveIndex(
@@ -87,8 +89,9 @@ const Faqs = () => {
             </FaqItem>
           ))}
         </FaqList>
-      </Container>
-    </Section>
+        </Container>
+      </Section>
+    </RevealSection>
   );
 };
 

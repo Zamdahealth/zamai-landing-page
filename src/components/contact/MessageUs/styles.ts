@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Section = styled.section`
   width: 100%;
@@ -87,9 +87,24 @@ export const InquiryCard = styled.div<{ active?: boolean }>`
   padding: 0 16px;
   background: #ffffff;
   border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 
   border: ${({ active }) =>
     active ? "1px solid #9ca3af" : "1px solid #ececec"};
+
+  &:hover {
+    border-color: #022c22;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #fafafa;
+  }
+
+  ${({ active }) =>
+    active &&
+    css`
+      box-shadow: 0 4px 16px rgba(2, 44, 34, 0.12);
+      background: #F1F5F5;
+    `}
 `;
 
 export const InquiryIcon = styled.img`
@@ -204,6 +219,18 @@ export const Input = styled.input`
   border: 1px solid #e5e7eb;
   font-size: 14px;
   outline: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #022c22;
+    background: #f5f5f5;
+  }
+
+  &:focus {
+    border-color: #022c22;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 44, 34, 0.1);
+  }
 `;
 
 export const PhoneField = styled.div`
@@ -215,6 +242,18 @@ export const PhoneField = styled.div`
   border: 1px solid #e5e7eb;
   background: #F9F9FA;
   overflow: hidden;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #022c22;
+    background: #f5f5f5;
+  }
+
+  &:focus-within {
+    border-color: #022c22;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 44, 34, 0.1);
+  }
 `;
 
 export const CountryCodeBox = styled.div`
@@ -242,6 +281,15 @@ export const CountrySelect = styled.select`
   padding: 0 28px 0 10px;
   font-size: 14px;
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const CountryDropdownIcon = styled.img`
@@ -262,6 +310,11 @@ export const PhoneInput = styled.input`
   padding: 0 14px;
   font-size: 14px;
   background: transparent;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const SelectWrapper = styled.div`
@@ -279,6 +332,18 @@ export const Select = styled.select`
   font-size: 14px;
   background: #F9F9FA;
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #022c22;
+    background: #f5f5f5;
+  }
+
+  &:focus {
+    border-color: #022c22;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 44, 34, 0.1);
+  }
 `;
 
 export const SelectIcon = styled.img`
@@ -301,7 +366,18 @@ export const TextArea = styled.textarea`
   outline: none;
   font-size: 14px;
   background: #F9F9FA;
+  transition: all 0.2s ease;
 
+  &:hover {
+    border-color: #022c22;
+    background: #f5f5f5;
+  }
+
+  &:focus {
+    border-color: #022c22;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(2, 44, 34, 0.1);
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -315,4 +391,15 @@ export const SubmitButton = styled.button`
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #023933;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(1, 38, 33, 0.25);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 `;

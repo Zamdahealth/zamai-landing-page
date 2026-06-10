@@ -223,7 +223,7 @@ export const Button = styled.button<ButtonProps>`
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   ${({ variant }) =>
     variant === "outline"
@@ -231,11 +231,32 @@ export const Button = styled.button<ButtonProps>`
           background: transparent;
           border: 1.5px solid rgba(255, 255, 255, 0.3);
           color: #ffffff;
+
+          &:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          }
+
+          &:active {
+            transform: translateY(-1px);
+          }
         `
       : css`
           background: #ffffff;
           border: none;
           color: #012621;
+
+          &:hover {
+            background: #f5f5f5;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+          }
+
+          &:active {
+            transform: translateY(-1px);
+          }
         `}
 
   @media (min-width: 769px) and (max-width: 1024px) {

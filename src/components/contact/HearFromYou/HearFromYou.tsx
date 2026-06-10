@@ -1,4 +1,5 @@
 import heartbeatLine from "../../../assets/heartbeat-line.png";
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
   Container,
@@ -10,26 +11,22 @@ import {
 
 const HearFromYou = () => {
   return (
-    <Section>
-  <Container>
-    <Heading>
-      We'd Love to <AccentText>Hear From You</AccentText>
-    </Heading>
+    <RevealSection delay={120}>
+      <Section>
+        <Container>
+          <Heading>
+            We'd Love to <AccentText>Hear From You</AccentText>
+          </Heading>
 
-    <Description>
-      Whether you're a pharmacist, doctor, patient, developer,
-      
-      investor, or partner — there's a team at Zam AI ready to help
-     
-      you.
-    </Description>
-  </Container>
+          <Description>
+            Whether you're a pharmacist, doctor, patient, developer, investor,
+            or partner — there's a team at Zam AI ready to help you.
+          </Description>
+        </Container>
 
-  <BackgroundLine
-    src={heartbeatLine}
-    alt="Decorative heartbeat line"
-  />
-</Section>
+        <BackgroundLine src={heartbeatLine} alt="Decorative heartbeat line" />
+      </Section>
+    </RevealSection>
   );
 };
 

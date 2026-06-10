@@ -1,3 +1,4 @@
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
   Content,
@@ -14,10 +15,11 @@ import {
 
 const HealthcareAI = () => {
   return (
-    <Section>
-      <Container>
+    <RevealSection delay={80}>
+      <Section>
+        <Container>
 
-      <Content>
+        <Content>
         {/* LEFT SIDE */}
         <Left>
           <Heading>
@@ -68,8 +70,8 @@ const HealthcareAI = () => {
         </Right>
       </Content>
       </Container>
-
     </Section>
+    </RevealSection>
   );
 };
 

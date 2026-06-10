@@ -1,6 +1,7 @@
 import liveChatIcon from "../../../assets/live-chat.png";
 import whatsappIcon from "../../../assets/whatsapp.png";
 import socialIcon from "../../../assets/social-media.png";
+import RevealSection from "../../shared/RevealSection/RevealSection";
 
 import {
   Section,
@@ -38,8 +39,9 @@ const channels = [
 
 const ReachUs = () => {
   return (
-    <Section>
-      <Container>
+    <RevealSection delay={200}>
+      <Section>
+        <Container>
         <Heading>Other Ways to Reach Us</Heading>
 
         <Description>
@@ -61,6 +63,7 @@ const ReachUs = () => {
         </CardsContainer>
       </Container>
     </Section>
+    </RevealSection>
   );
 };
 

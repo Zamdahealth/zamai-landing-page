@@ -1,3 +1,4 @@
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
   Container,
@@ -11,8 +12,9 @@ import {
 
 const FutureHealthcare = () => {
   return (
-    <Section>
-      <Container>
+    <RevealSection delay={100}>
+      <Section>
+        <Container>
         <Heading>
           The Future of Healthcare Starts Here.
         </Heading>
@@ -34,6 +36,7 @@ const FutureHealthcare = () => {
         </ButtonContainer>
       </Container>
     </Section>
+    </RevealSection>
   );
 };
 

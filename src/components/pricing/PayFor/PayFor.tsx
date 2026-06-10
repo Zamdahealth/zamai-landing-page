@@ -1,5 +1,6 @@
 import heartbeatLine from "../../../assets/heartbeat-line.png";
 
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
   Container,
@@ -15,8 +16,9 @@ import {
 
 const PayFor = () => {
   return (
-    <Section>
-      <Container>
+    <RevealSection delay={200}>
+      <Section>
+        <Container>
         <Heading>
           Pay for What You Actually Need
         </Heading>
@@ -48,6 +50,7 @@ const PayFor = () => {
         </PricingWrapper>
       </Container>
     </Section>
+    </RevealSection>
   );
 };
 

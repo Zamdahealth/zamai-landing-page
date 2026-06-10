@@ -2,6 +2,7 @@ import chatIcon from "../../../assets/chat-icon.png";
 import brainIcon from "../../../assets/brain-icon.png";
 import shieldIcon from "../../../assets/shield-icon.png";
 
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   SectionContainer,
   SectionContent,
@@ -19,8 +20,9 @@ import {
 
 const SimpleSteps = () => {
   return (
-    <SectionContainer>
-      <SectionContent>
+    <RevealSection delay={140}>
+      <SectionContainer>
+        <SectionContent>
         <Heading>
           <DesktopHeading>
             Intelligent Healthcare in 3 Simple Steps
@@ -71,6 +73,7 @@ const SimpleSteps = () => {
         </StepsGrid>
       </SectionContent>
     </SectionContainer>
+    </RevealSection>
   );
 };
 

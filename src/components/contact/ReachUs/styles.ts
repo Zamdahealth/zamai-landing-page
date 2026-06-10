@@ -81,10 +81,13 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
@@ -138,4 +141,11 @@ export const CardLink = styled.a`
   text-align: center;
   color: #43fff3;
   cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: #6bffff;
+    transform: translateY(-2px);
+  }
 `;

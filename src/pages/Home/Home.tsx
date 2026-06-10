@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <PharmacyFeatures />
+       <PharmacyFeatures />
       <SimpleSteps />
       <ForPharmacies />
       <ForClinicians />
