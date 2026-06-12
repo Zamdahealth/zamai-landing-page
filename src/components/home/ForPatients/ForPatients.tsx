@@ -1,3 +1,4 @@
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
   Wrapper,
@@ -55,8 +56,9 @@ const cards = [
 
 const ForPatients = () => {
   return (
-    <Section>
-      <Wrapper>
+    <RevealSection delay={160}>
+      <Section>
+        <Wrapper>
         {/* TOP SECTION */}
         <Header>
           <Badge>For Patients</Badge>
@@ -89,6 +91,7 @@ const ForPatients = () => {
         </Grid>
       </Wrapper>
     </Section>
+    </RevealSection>
   );
 };
 

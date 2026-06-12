@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 import logo from "../../../assets/logo.png";
 import downLine from "../../../assets/down_line.png";
@@ -32,16 +33,18 @@ const Navbar = () => {
       <NavbarContainer>
         <NavContent>
           <LeftSection>
-            <Logo src={logo} alt="Zamda Logo" />
+            <Link to="/">
+              <Logo src={logo} alt="Zamda Logo" />
+            </Link>
           </LeftSection>
 
           <NavLinks>
             <NavItem>
               Solutions <DropdownIcon src={downLine} />
             </NavItem>
-            <NavItem>Developers</NavItem>
-            <NavItem>Pricing</NavItem>
-            <NavItem>Contact Us</NavItem>
+            <NavItem as={NavLink} to="/" end>Developers</NavItem>
+            <NavItem as={NavLink} to="/pricing">Pricing</NavItem>
+            <NavItem as={NavLink} to="/contact">Contact Us</NavItem>
           </NavLinks>
 
           <RightSection>
@@ -63,9 +66,9 @@ const Navbar = () => {
         <NavItem onClick={closeMenu}>
           Solutions <DropdownIcon src={downLine} />
         </NavItem>
-        <NavItem onClick={closeMenu}>Developers</NavItem>
-        <NavItem onClick={closeMenu}>Pricing</NavItem>
-        <NavItem onClick={closeMenu}>Contact Us</NavItem>
+        <NavItem as={NavLink} to="/" end onClick={closeMenu}>Developers</NavItem>
+        <NavItem as={NavLink} to="/pricing" onClick={closeMenu}>Pricing</NavItem>
+        <NavItem as={NavLink} to="/contact" onClick={closeMenu}>Contact Us</NavItem>
 
         <SecondaryButton>Button</SecondaryButton>
         <PrimaryButton>Get Early Access</PrimaryButton>

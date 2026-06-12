@@ -1,4 +1,5 @@
 import heroImage from "../../../assets/hero-image.png";
+import RevealSection from "../../shared/RevealSection/RevealSection";
 
 import {
   HeroContainer,
@@ -21,9 +22,10 @@ import apiIcon from "../../../assets/code.png";
 
 const Hero = () => {
   return (
-    <HeroContainer>
-      <HeroContent>
-        <LeftSection>
+    <RevealSection>
+      <HeroContainer>
+        <HeroContent>
+          <LeftSection>
           <Heading>
             <>
               <DesktopText>
@@ -67,6 +69,7 @@ const Hero = () => {
         </RightSection>
       </HeroContent>
     </HeroContainer>
+    </RevealSection>
   );
 };
 

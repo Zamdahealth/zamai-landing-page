@@ -1,3 +1,4 @@
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   FeaturesContainer,
   FeaturesContent,
@@ -17,8 +18,9 @@ import developerIcon from "../../../assets/code_2.png";
 
 const PharmacyFeatures = () => {
   return (
-    <FeaturesContainer>
-      <FeaturesContent>
+    <RevealSection delay={120}>
+      <FeaturesContainer>
+        <FeaturesContent>
         <Title>Built for Everyone in Healthcare</Title>
 
         <Subtitle>
@@ -73,6 +75,7 @@ const PharmacyFeatures = () => {
         </Grid>
       </FeaturesContent>
     </FeaturesContainer>
+    </RevealSection>
   );
 };
 

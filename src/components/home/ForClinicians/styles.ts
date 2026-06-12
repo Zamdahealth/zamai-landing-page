@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SectionContainer = styled.section`
   width: 100%;
+  overflow-x: hidden;
 
   padding: 120px 24px;
 
@@ -18,12 +19,16 @@ export const SectionContainer = styled.section`
 export const SectionContent = styled.div`
   width: 100%;
   max-width: 1200px;
+  min-width: 0;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   gap: 60px;
+
+  /* ✅ prevents overflow on smaller laptops */
+  flex-wrap: wrap;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     gap: 40px;
@@ -35,12 +40,17 @@ export const SectionContent = styled.div`
   }
 `;
 
+/* LEFT IMAGE */
 export const LeftSection = styled.div`
   flex: 1;
+  min-width: 0;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+
+  /* safer scaling */
+  max-width: 100%;
 
   @media (max-width: 768px) {
     display: none;
@@ -50,41 +60,45 @@ export const LeftSection = styled.div`
 export const CliniciansImage = styled.img`
   width: 100%;
   max-width: 620px;
-
   height: auto;
 
   object-fit: contain;
-
   display: block;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     max-width: 480px;
   }
-`;
-
-export const RightSection = styled.div`
-  flex: 1;
-  max-width: 520px;
 
   @media (max-width: 768px) {
     max-width: 100%;
   }
 `;
 
-export const Label = styled.p`
-  width: 120px;
-  height: 36px;
+/* RIGHT CONTENT */
+export const RightSection = styled.div`
+  flex: 1;
+  min-width: 0;
+  max-width: 520px;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+`;
+
+/* LABEL */
+export const Label = styled.p`
+  width: fit-content;
 
   padding: 10px 16px;
 
   border-radius: 100px;
 
   background: #ecfffe;
-
   color: #0a5f55;
 
   font-size: 13px;
@@ -97,26 +111,25 @@ export const Label = styled.p`
   }
 `;
 
+/* HEADING */
 export const Heading = styled.h2`
   font-size: 45px;
   font-weight: 600;
 
-  line-height: 44px;
-  letter-spacing: -3%;
+  line-height: 1.2;
 
   color: #111111;
 
   margin-bottom: 12px;
 
+  word-break: break-word;
+
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 36px;
-    line-height: 40px;
   }
 
   @media (max-width: 768px) {
     font-size: 32px;
-    line-height: 38px;
-
     text-align: center;
   }
 `;
@@ -137,6 +150,7 @@ export const MobileHeading = styled.span`
   }
 `;
 
+/* DESCRIPTION */
 export const Description = styled.p`
   width: 100%;
   max-width: 500px;
@@ -146,10 +160,11 @@ export const Description = styled.p`
 
   color: #616161;
 
-  line-height: 20px;
-  letter-spacing: -1.5%;
+  line-height: 24px;
 
   margin-bottom: 48px;
+
+  word-break: break-word;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 16px;
@@ -157,12 +172,8 @@ export const Description = styled.p`
 
   @media (max-width: 768px) {
     max-width: 100%;
-
     text-align: center;
-
     font-size: 15px;
-    line-height: 24px;
-
     margin: 0 auto 48px auto;
   }
 `;
@@ -175,14 +186,15 @@ export const MobileBreak = styled.br`
   }
 `;
 
+/* FEATURES */
 export const FeaturesList = styled.div`
   display: flex;
   flex-direction: column;
-
   gap: 24px;
 
+  width: 100%;
+
   @media (max-width: 768px) {
-    width: 100%;
     align-items: center;
   }
 `;
@@ -190,15 +202,14 @@ export const FeaturesList = styled.div`
 export const FeatureItem = styled.div`
   display: flex;
   align-items: flex-start;
-
   gap: 14px;
 
+  width: 100%;
+
   @media (max-width: 768px) {
-    width: 100%;
     max-width: 360px;
 
     background: #ffffff;
-
     padding: 20px 16px;
 
     border-radius: 16px;
@@ -207,20 +218,12 @@ export const FeatureItem = styled.div`
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
 
     align-items: center;
-
-    justify-content: flex-start;
-
-    text-align: left;
   }
 `;
 
 export const FeatureIcon = styled.img`
   width: 54px;
   height: 45px;
-
-  padding: 8px;
-
-  border-radius: 8px;
 
   flex-shrink: 0;
 
@@ -235,8 +238,8 @@ export const FeatureIcon = styled.img`
 export const FeatureContent = styled.div`
   display: flex;
   flex-direction: column;
-
   flex: 1;
+  min-width: 0;
 `;
 
 export const FeatureTitle = styled.h4`
@@ -244,15 +247,15 @@ export const FeatureTitle = styled.h4`
   font-weight: 600;
 
   line-height: 28px;
-  letter-spacing: -3%;
 
   color: #222222;
 
   margin-bottom: 4px;
 
+  word-break: break-word;
+
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 20px;
-    line-height: 24px;
   }
 
   @media (max-width: 768px) {
@@ -265,9 +268,10 @@ export const FeatureDescription = styled.p`
   font-weight: 400;
 
   line-height: 24px;
-  letter-spacing: 0.5%;
 
   color: #757575;
+
+  word-break: break-word;
 
   @media (max-width: 768px) {
     font-size: 13px;

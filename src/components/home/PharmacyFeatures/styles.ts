@@ -58,10 +58,11 @@ export const Card = styled.div`
   padding: 28px;
   text-align: left;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.04);
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12);
   }
 `;
 

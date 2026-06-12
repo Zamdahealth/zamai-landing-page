@@ -148,10 +148,16 @@ export const PrimaryButton = styled.button`
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    opacity: 0.9;
+    background: #033a30;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(2, 44, 34, 0.25);
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 
   /* TABLET */
@@ -184,6 +190,13 @@ export const SecondaryButton = styled.button`
 
   &:hover {
     background: #f8f8f8;
+    border-color: #022c22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   /* TABLET */
