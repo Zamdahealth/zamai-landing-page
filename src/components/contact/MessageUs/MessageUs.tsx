@@ -1,9 +1,15 @@
+import { useState } from "react";
+import { toast } from "react-toastify";
+
 import dropdownIcon from "../../../assets/dropdown.png";
 import downlineIcon from "../../../assets/down_line.png";
 import generalInquiryIcon from "../../../assets/general-inquiry.png";
 import technicalSupportIcon from "../../../assets/technical-support.png";
 import partnershipIcon from "../../../assets/partnership.png";
+
 import RevealSection from "../../shared/RevealSection/RevealSection";
+
+import { sendContactMessage } from "../../../services/contactApi";
 
 import {
   Section,
@@ -57,127 +63,219 @@ const inquiryOptions = [
 ];
 
 const MessageUs = () => {
+  const [loading, setLoading] = useState(false);
+
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    countryCode: "+234",
+    companyName: "",
+    role: "",
+    country: "",
+    inquiryType: "General Inquiry",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+      await sendContactMessage(form);
+
+      toast.success("Message sent successfully!");
+      setForm({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        countryCode: "+234",
+        companyName: "",
+        role: "",
+        country: "",
+        inquiryType: "General Inquiry",
+        message: "",
+      });
+    } catch (error: any) {
+  console.log("FULL ERROR:", error);
+  console.log("RESPONSE DATA:", error?.response?.data);
+  console.log("STATUS:", error?.response?.status);
+
+  toast.error("Failed to send message.");
+} finally {
+  setLoading(false);
+}}
+
   return (
     <RevealSection delay={180}>
       <Section>
         <Container>
-        <LeftColumn>
-          <Heading>How Can We Help?</Heading>
+          <LeftColumn>
+            <Heading>How Can We Help?</Heading>
 
-          <Description>
-            Choose the type of inquiry that best describes your need. Our team
-            will route your message to the right expert and get back to you fast.
-          </Description>
+            <Description>
+              Choose the type of inquiry that best describes your need. Our team
+              will route your message to the right expert and get back to you fast.
+            </Description>
 
-          <InquiryList>
-            {inquiryOptions.map((item, index) => (
-              <InquiryCard key={item.title} active={index === 0}>
-                <InquiryIcon src={item.icon} alt={item.title} />
+            <InquiryList>
+              {inquiryOptions.map((item, index) => (
+                <InquiryCard key={item.title} active={index === 0}>
+                  <InquiryIcon src={item.icon} alt={item.title} />
 
-                <InquiryContent>
-                  <InquiryTitle>{item.title}</InquiryTitle>
-                  <InquiryText>{item.description}</InquiryText>
-                </InquiryContent>
-              </InquiryCard>
-            ))}
-          </InquiryList>
-        </LeftColumn>
+                  <InquiryContent>
+                    <InquiryTitle>{item.title}</InquiryTitle>
+                    <InquiryText>{item.description}</InquiryText>
+                  </InquiryContent>
+                </InquiryCard>
+              ))}
+            </InquiryList>
+          </LeftColumn>
 
-        <RightColumn>
-          <FormCard>
-            <FormTitle>Send Us a Message</FormTitle>
+          <RightColumn>
+            <FormCard>
+              <FormTitle>Send Us a Message</FormTitle>
 
-            <FormDescription>
-              General Inquiry — we'll get back to you within 24 hours.
-            </FormDescription>
+              <FormDescription>
+                General Inquiry — we'll get back to you within 24 hours.
+              </FormDescription>
 
-            <Form>
-              <InputGroup>
-                <Label>Full Name*</Label>
-                <Input placeholder="Enter your full name" />
-              </InputGroup>
-
-              <FormRow>
+              <Form onSubmit={handleSubmit}>
                 <InputGroup>
-                  <Label>Email*</Label>
-                  <Input placeholder="example@gmail.com" />
+                  <Label>Full Name*</Label>
+                  <Input
+                    name="fullName"
+                    value={form.fullName}
+                    onChange={handleChange}
+                  />
                 </InputGroup>
 
+                <FormRow>
+                  <InputGroup>
+                    <Label>Email*</Label>
+                    <Input
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                    />
+                  </InputGroup>
+
+                  <InputGroup>
+                    <Label>Phone Number*</Label>
+
+                    <PhoneField>
+                      <CountryCodeBox>
+                        <CountrySelect
+                          name="countryCode"
+                          value={form.countryCode}
+                          onChange={handleChange}
+                        >
+                          <option value="+234">+234</option>
+                          <option value="+1">+1</option>
+                          <option value="+44">+44</option>
+                          <option value="+91">+91</option>
+                        </CountrySelect>
+
+                        <CountryDropdownIcon src={dropdownIcon} />
+                      </CountryCodeBox>
+
+                      <PhoneInput
+                        name="phoneNumber"
+                        value={form.phoneNumber}
+                        onChange={handleChange}
+                      />
+                    </PhoneField>
+                  </InputGroup>
+                </FormRow>
+
                 <InputGroup>
-                  <Label>Phone Number*</Label>
-
-                  <PhoneField>
-                    <CountryCodeBox>
-                      <CountrySelect defaultValue="+234">
-                        <option value="+234">+234</option>
-                        <option value="+1">+1</option>
-                        <option value="+44">+44</option>
-                        <option value="+91">+91</option>
-                        <option value="+233">+233</option>
-                      </CountrySelect>
-
-                      <CountryDropdownIcon src={dropdownIcon} />
-                    </CountryCodeBox>
-
-                    <PhoneInput placeholder="Phone Number" />
-                  </PhoneField>
+                  <Label>Company Name</Label>
+                  <Input
+                    name="companyName"
+                    value={form.companyName}
+                    onChange={handleChange}
+                  />
                 </InputGroup>
-              </FormRow>
 
-              <InputGroup>
-                <Label>Company Name</Label>
-                <Input placeholder="Enter company name" />
-              </InputGroup>
+                <FormRow>
+                  <InputGroup>
+                    <Label>I am a*</Label>
+                    <SelectWrapper>
+                      <Select
+                        name="role"
+                        value={form.role}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select your role</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Pharmacist">Pharmacist</option>
+                        <option value="Developer">Developer</option>
+                      </Select>
 
-              <FormRow>
+                      <SelectIcon src={downlineIcon} />
+                    </SelectWrapper>
+                  </InputGroup>
+
+                  <InputGroup>
+                    <Label>Country</Label>
+                    <SelectWrapper>
+                      <Select
+                        name="country"
+                        value={form.country}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select country</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="USA">United States</option>
+                      </Select>
+
+                      <SelectIcon src={downlineIcon} />
+                    </SelectWrapper>
+                  </InputGroup>
+                </FormRow>
+
                 <InputGroup>
-                  <Label>I am a*</Label>
+                  <Label>Inquiry Type*</Label>
                   <SelectWrapper>
-                    <Select>
-                      <option>Select your role</option>
-                      <option>Pharmacist</option>
+                    <Select
+                      name="inquiryType"
+                      value={form.inquiryType}
+                      onChange={handleChange}
+                    >
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Technical Support">Technical Support</option>
+                      <option value="Partnership">Partnership</option>
                     </Select>
+
                     <SelectIcon src={downlineIcon} />
                   </SelectWrapper>
                 </InputGroup>
 
                 <InputGroup>
-                  <Label>Country</Label>
-                  <SelectWrapper>
-                    <Select>
-                      <option>Select country</option>
-                      <option>Nigeria </option>
-                      <option>United Kingdom </option>
-                      <option>United States </option>
-                    </Select>
-                    <SelectIcon src={downlineIcon} />
-                  </SelectWrapper>
+                  <Label>Message*</Label>
+                  <TextArea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                  />
                 </InputGroup>
-              </FormRow>
 
-              <InputGroup>
-                <Label>Inquiry Type*</Label>
-                <SelectWrapper>
-                  <Select>
-                    <option>General Inquiry</option>
-                    <option>Technical / API Support</option>
-                    <option>Partnership & Business</option>
-                  </Select>
-                  <SelectIcon src={downlineIcon} />
-                </SelectWrapper>
-              </InputGroup>
-
-              <InputGroup>
-                <Label>Message*</Label>
-                <TextArea placeholder="Tell us how we can help you..." />
-              </InputGroup>
-
-              <SubmitButton>Send Message</SubmitButton>
-            </Form>
-          </FormCard>
-        </RightColumn>
-      </Container>
-    </Section>
+                <SubmitButton disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
+                </SubmitButton>
+              </Form>
+            </FormCard>
+          </RightColumn>
+        </Container>
+      </Section>
     </RevealSection>
   );
 };
