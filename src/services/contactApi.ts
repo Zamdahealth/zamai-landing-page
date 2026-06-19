@@ -7,11 +7,12 @@ export const sendContactMessage = async (data: any) => {
     fullName: data.fullName,
     email: data.email,
     phone: `${data.countryCode}${data.phoneNumber}`,
-    company: data.companyName,
-    // role: data.role,
-    // country: data.country,
-    // inquiryType: data.inquiryType,
-    message: data.message,
+    company: data.companyName || "",
+    message: `[Zamai Website Contact Form] Inquiry Type: ${data.inquiryType}
+Role: ${data.role || "N/A"}
+Country: ${data.country || "N/A"}
+
+${data.message}`,
   };
 
   console.log("PAYLOAD BEING SENT:", payload);

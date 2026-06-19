@@ -24,7 +24,8 @@ const Join = () => {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
-    organization: "",
+    phone: "",
+    company: "",
     notes: "",
   });
 
@@ -53,6 +54,11 @@ const Join = () => {
       return;
     }
 
+    if (!form.phone.trim()) {
+      toast.error("Please enter your phone number.");
+      return;
+    }
+
     try {
       setLoading(true);
 
@@ -67,7 +73,8 @@ const Join = () => {
       setForm({
         fullName: "",
         email: "",
-        organization: "",
+        phone: "",
+        company: "",
         notes: "",
       });
     } catch (error: any) {
@@ -111,33 +118,46 @@ const Join = () => {
                   />
                 </InputGroup>
 
-                <InputGroup>
-                  <Label>Email Address*</Label>
+                    <InputGroup>
+                    <Label>Email Address*</Label>
 
-                  <Input
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="you@example.com"
-                  />
-                </InputGroup>
-              </FormRow>
+                    <Input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                    />
+                  </InputGroup>
+                </FormRow>
 
-              {/* Organization */}
-              <FormRow>
-                <InputGroup>
-                  <Label>Organization</Label>
+                <FormRow>
+                  <InputGroup>
+                    <Label>Phone Number*</Label>
 
-                  <Input
-                    type="text"
-                    name="organization"
-                    value={form.organization}
-                    onChange={handleChange}
-                    placeholder="Company, clinic or team"
-                  />
-                </InputGroup>
-              </FormRow>
+                    <Input
+                      type="tel"
+                      name="phone"
+                      value={form.phone}
+                      onChange={handleChange}
+                      placeholder="Enter your phone number"
+                    />
+                  </InputGroup>
+                </FormRow>
+
+                <FormRow>
+                  <InputGroup>
+                    <Label>Company / Organization</Label>
+
+                    <Input
+                      type="text"
+                      name="company"
+                      value={form.company}
+                      onChange={handleChange}
+                      placeholder="Company, clinic or team"
+                    />
+                  </InputGroup>
+                </FormRow>
 
               {/* Notes */}
               <FormRow>
