@@ -150,6 +150,14 @@ export const PrimaryButton = styled.button`
   cursor: pointer;
   transition: all 0.2s ease;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 0;
+  line-height: 1;
+
   &:hover {
     background: #033a30;
     transform: translateY(-3px);
@@ -158,6 +166,12 @@ export const PrimaryButton = styled.button`
 
   &:active {
     transform: translateY(-1px);
+  }
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
   }
 
   /* TABLET */

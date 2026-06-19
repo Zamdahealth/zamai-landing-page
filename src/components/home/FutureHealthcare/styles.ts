@@ -86,15 +86,21 @@ export const PrimaryButton = styled.button`
 
   border: none;
   border-radius: 8px;
-  padding: 22px 32px;
+  padding: 0;
   background: #012621;
   color: #ffffff;
-  gap: 10px;
   font-size: 16px;
   font-weight: 600;
 
   cursor: pointer;
   transition: all 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
 
   &:hover {
     background: #023933;
@@ -104,6 +110,12 @@ export const PrimaryButton = styled.button`
 
   &:active {
     transform: translateY(-1px);
+  }
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
   }
 
   @media (max-width: 768px) {

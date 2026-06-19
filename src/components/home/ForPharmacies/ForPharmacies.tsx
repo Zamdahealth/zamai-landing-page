@@ -70,7 +70,7 @@ const features = [
 const ForPharmacies = () => {
   return (
     <RevealSection delay={180} direction="left">
-      <SectionContainer>
+      <SectionContainer id="for-pharmacies">
         <SectionContent>
         <LeftSection>
           <Label>For Pharmacies</Label>

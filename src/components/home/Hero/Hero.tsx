@@ -1,4 +1,5 @@
 import heroImage from "../../../assets/hero-image.png";
+import { Link } from "react-router-dom";
 import RevealSection from "../../shared/RevealSection/RevealSection";
 
 import {
@@ -55,7 +56,7 @@ const Hero = () => {
           </Description>
 
           <ButtonContainer>
-            <PrimaryButton>Get Early Access</PrimaryButton>
+            <PrimaryButton as={Link} to="/waitlist">Get Early Access</PrimaryButton>
 
             <SecondaryButton>
               <ButtonIcon src={apiIcon} alt="API Icon" />

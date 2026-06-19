@@ -64,7 +64,7 @@ const features = [
 const ForClinicians = () => {
   return (
     <RevealSection delay={180} direction="right">
-      <SectionContainer>
+      <SectionContainer id="for-clinicians">
         <SectionContent>
         <LeftSection>
           <CliniciansImage

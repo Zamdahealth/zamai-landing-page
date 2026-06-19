@@ -57,7 +57,7 @@ const cards = [
 const ForPatients = () => {
   return (
     <RevealSection delay={160}>
-      <Section>
+      <Section id="for-patients">
         <Wrapper>
         {/* TOP SECTION */}
         <Header>
