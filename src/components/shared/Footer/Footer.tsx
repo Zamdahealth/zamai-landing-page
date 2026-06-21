@@ -21,6 +21,7 @@ import {
   Copyright,
   BottomLinks,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -44,12 +45,20 @@ const Footer = () => {
           </BrandColumn>
 
           <FooterColumn>
-            <ColumnTitle>Solutions</ColumnTitle>
+  <ColumnTitle>Solutions</ColumnTitle>
 
-            <FooterLink>For Pharmacies</FooterLink>
-            <FooterLink>For Doctors</FooterLink>
-            <FooterLink>For Patients</FooterLink>
-          </FooterColumn>
+  <FooterLink as={Link} to="/#for-pharmacies">
+    For Pharmacies
+  </FooterLink>
+
+  <FooterLink as={Link} to="/#for-clinicians">
+    For Doctors
+  </FooterLink>
+
+  <FooterLink as={Link} to="/#for-patients">
+    For Patients
+  </FooterLink>
+</FooterColumn>
 
           <FooterColumn>
             <ColumnTitle>Developers</ColumnTitle>
