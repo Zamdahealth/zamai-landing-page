@@ -86,7 +86,7 @@ export const CliniciansImage = styled.img`
   width: 100%;
   max-width: 620px;
   height: auto;
-  animation: ${fadeUp} 0.3s linear infinite both;
+  animation: ${fadeUp} 0.7s linear infinite both;
 
   object-fit: contain;
   display: block;

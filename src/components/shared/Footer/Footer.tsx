@@ -1,4 +1,4 @@
-import logo from "../../../assets/logo-2.png";
+import logo from "../../../assets/logo.png";
 import instagram from "../../../assets/instagram.png";
 import xIcon from "../../../assets/X.png";
 import tiktok from "../../../assets/tiktok.png";

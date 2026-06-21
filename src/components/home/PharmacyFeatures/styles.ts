@@ -1,35 +1,6 @@
 import styled, {    keyframes } from "styled-components";
 
-const rotate = keyframes `
-    0% {
-    -webkit-transform: scale(1) rotateZ(0);
-            transform: scale(1) rotateZ(0);
-  }
-  50% {
-    -webkit-transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
-  }
-}
-@keyframes rotate-scale-up {
-  0% {
-    -webkit-transform: scale(1) rotateZ(0);
-            transform: scale(1) rotateZ(0);
-  }
-  50% {
-    -webkit-transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
-  }
 
-
-`
 export const FeaturesContainer = styled.section`
   width: 100%;
   padding: 80px 24px;
@@ -84,60 +55,7 @@ export const Grid = styled.div`
   }
 `;
 
-const fadeUp = keyframes `
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-@keyframes vibrate-1 {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
 
-
-`
 
 export const Card = styled.div`
   background: #FFFFFF;
@@ -146,8 +64,7 @@ export const Card = styled.div`
   text-align: left;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.04);
   transition: all 0.2s ease;
-  animation: ${rotate} 1s linear both;
-  animation: ${fadeUp} 0.3s linear infinite both;
+ 
 
   &:hover {
     transform: translateY(-6px);

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {    keyframes } from "styled-components";
+
 
 export const Section = styled.section`
   width: 100%;
@@ -14,6 +15,32 @@ export const Section = styled.section`
   }
 
   
+`;
+const fadeUp = keyframes `
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 `;
 
 export const Container = styled.div`
@@ -91,6 +118,7 @@ export const PrimaryButton = styled.button`
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
+  animation: ${fadeUp} 0.7s linear infinite both;
 
   cursor: pointer;
   transition: all 0.2s ease;

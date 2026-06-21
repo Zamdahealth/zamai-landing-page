@@ -319,7 +319,7 @@ export const PharmacyImage = styled.img`
   display: block;
 
   margin-top: 40px;
-  animation: ${fadeUp} 0.3s linear infinite both;
+  animation: ${fadeUp} 0.7s linear infinite both;
 
 
   @media (min-width: 769px) and (max-width: 1024px) {
