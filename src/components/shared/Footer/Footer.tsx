@@ -1,4 +1,5 @@
-import logo from "../../../assets/logo.png";
+
+import logo2 from "../../../assets/logo-2.png";
 import instagram from "../../../assets/instagram.png";
 import xIcon from "../../../assets/X.png";
 import tiktok from "../../../assets/tiktok.png";
@@ -29,7 +30,7 @@ const Footer = () => {
       <Container>
         <TopSection>
           <BrandColumn>
-            <Logo src={logo} alt="Zamda AI" />
+            <Logo src={logo2} alt="Zamda AI" />
 
             <Tagline>
               The AI Health Assistant for

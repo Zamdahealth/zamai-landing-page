@@ -57,30 +57,30 @@ const Navbar = () => {
     const sectionIds = ["for-pharmacies", "for-clinicians", "for-patients"];
 
     const updateActive = () => {
-      const scrollPosition = window.scrollY + 140;
-      let currentId = sectionIds[0];
-
-      sectionIds.forEach((id, index) => {
-        const element = document.getElementById(id);
-        if (!element) return;
-
-        const nextId = sectionIds[index + 1];
-        const nextElement = nextId ? document.getElementById(nextId) : null;
-        const top = element.offsetTop;
-
-        if (nextElement) {
-          const nextTop = nextElement.offsetTop;
-          if (scrollPosition >= top && scrollPosition < nextTop) {
-            currentId = id;
-          }
-        } else if (scrollPosition >= top) {
+      const sectionIds = [
+        "for-pharmacies",
+        "for-clinicians",
+        "for-patients",
+      ];
+    
+      let currentId = "";
+    
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+    
+        if (!section) return;
+    
+        const rect = section.getBoundingClientRect();
+    
+        if (rect.top <= 180 && rect.bottom >= 180) {
           currentId = id;
         }
       });
-
-      setActiveSolution(currentId);
+    
+      if (currentId) {
+        setActiveSolution(currentId);
+      }
     };
-
     updateActive();
     window.addEventListener("scroll", updateActive);
     return () => window.removeEventListener("scroll", updateActive);
