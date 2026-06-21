@@ -54,7 +54,6 @@ const Navbar = () => {
       return;
     }
 
-    const sectionIds = ["for-pharmacies", "for-clinicians", "for-patients"];
 
     const updateActive = () => {
       const sectionIds = [
