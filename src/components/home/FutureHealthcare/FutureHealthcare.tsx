@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   Section,
@@ -25,7 +26,7 @@ const FutureHealthcare = () => {
         </Description>
 
         <ButtonContainer>
-          <PrimaryButton>
+          <PrimaryButton as={Link} to="/waitlist">
             Get Early Access
           </PrimaryButton>
 

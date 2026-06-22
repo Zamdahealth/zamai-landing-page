@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {    keyframes } from "styled-components";
+
 
 export const Section = styled.section`
   width: 100%;
@@ -14,6 +15,32 @@ export const Section = styled.section`
   }
 
   
+`;
+const fadeUp = keyframes `
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 `;
 
 export const Container = styled.div`
@@ -86,15 +113,22 @@ export const PrimaryButton = styled.button`
 
   border: none;
   border-radius: 8px;
-  padding: 22px 32px;
+  padding: 0;
   background: #012621;
   color: #ffffff;
-  gap: 10px;
   font-size: 16px;
   font-weight: 600;
+  animation: ${fadeUp} 0.7s linear infinite both;
 
   cursor: pointer;
   transition: all 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
 
   &:hover {
     background: #023933;
@@ -104,6 +138,12 @@ export const PrimaryButton = styled.button`
 
   &:active {
     transform: translateY(-1px);
+  }
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
   }
 
   @media (max-width: 768px) {

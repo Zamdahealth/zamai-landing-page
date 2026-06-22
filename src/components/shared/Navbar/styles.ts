@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled, {    keyframes } from "styled-components";
+import { Link } from "react-router-dom";
+
 
 /* NAVBAR */
 export const NavbarContainer = styled.nav`
@@ -73,6 +75,35 @@ export const NavLinks = styled.div`
   }
 `;
 
+export const DropdownMenu = styled.div<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  padding: 8px 6px;
+  z-index: 1200;
+`;
+
+export const DropdownItem = styled(Link)<{ active?: boolean }>`
+  display: block;
+  padding: 10px 14px;
+  color: ${({ active }) => (active ? "#022c22" : "#111111")};
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  background: ${({ active }) => (active ? "#eaf6ef" : "transparent")};
+
+  &:hover {
+    background: #f6f9f8;
+    color: #022c22;
+  }
+`;
+
 export const NavItem = styled.div`
   display: flex;
   align-items: center;
@@ -89,6 +120,8 @@ export const NavItem = styled.div`
   transition: 0.3s ease;
   border-bottom: 2px solid transparent;
   padding-bottom: 4px;
+
+  position: relative;
 
   &:hover {
     color: #022c22;
@@ -166,9 +199,54 @@ export const SecondaryButton = styled.button`
   }
 `;
 
+const fadeUp = keyframes `
+  0% {
+    transform: translateY(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+`
+
 export const PrimaryButton = styled.button`
   width: 148px;
   height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
 
   border: none;
   border-radius: 8px;
@@ -180,6 +258,9 @@ export const PrimaryButton = styled.button`
   font-weight: 500;
 
   cursor: pointer;
+
+  line-height: 1;
+  padding: 0 16px;
 
   transition: all 0.2s ease;
 
@@ -200,7 +281,19 @@ export const PrimaryButton = styled.button`
 
     font-size: 13px;
   }
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  animation: ${fadeUp} 0.9s both;
+
+
 `;
+
+
 
 /* HAMBURGER */
 export const HamburgerIcon = styled.img`

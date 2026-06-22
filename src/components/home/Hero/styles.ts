@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {    keyframes } from "styled-components";
+
 
 export const HeroContainer = styled.section`
   width: 100%;
@@ -138,6 +139,33 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+const fadeUp = keyframes `
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+`;
+
 export const PrimaryButton = styled.button`
   width: 180px;
   height: 54px;
@@ -149,6 +177,15 @@ export const PrimaryButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  animation: ${fadeUp} 0.7s linear infinite both;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 0;
+  line-height: 1;
 
   &:hover {
     background: #033a30;
@@ -158,6 +195,12 @@ export const PrimaryButton = styled.button`
 
   &:active {
     transform: translateY(-1px);
+  }
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
   }
 
   /* TABLET */

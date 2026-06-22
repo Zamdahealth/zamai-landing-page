@@ -1,4 +1,31 @@
-import styled from "styled-components";
+import styled, {    keyframes } from "styled-components";
+
+const fadeUp = keyframes `
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+`;
 
 export const SectionContainer = styled.section`
   width: 100%;
@@ -26,8 +53,6 @@ export const SectionContent = styled.div`
   justify-content: space-between;
 
   gap: 60px;
-
-  /* ✅ prevents overflow on smaller laptops */
   flex-wrap: wrap;
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -61,6 +86,7 @@ export const CliniciansImage = styled.img`
   width: 100%;
   max-width: 620px;
   height: auto;
+  animation: ${fadeUp} 0.7s linear infinite both;
 
   object-fit: contain;
   display: block;

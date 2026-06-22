@@ -1,6 +1,7 @@
-import logo from "../../../assets/logo-2.png";
+
+import logo2 from "../../../assets/logo-2.png";
 import instagram from "../../../assets/instagram.png";
-import xIcon from "../../../assets/x.png";
+import xIcon from "../../../assets/X.png";
 import tiktok from "../../../assets/tiktok.png";
 
 import {
@@ -21,6 +22,7 @@ import {
   Copyright,
   BottomLinks,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,7 +30,7 @@ const Footer = () => {
       <Container>
         <TopSection>
           <BrandColumn>
-            <Logo src={logo} alt="Zamda AI" />
+            <Logo src={logo2} alt="Zamda AI" />
 
             <Tagline>
               The AI Health Assistant for
@@ -44,12 +46,20 @@ const Footer = () => {
           </BrandColumn>
 
           <FooterColumn>
-            <ColumnTitle>Solutions</ColumnTitle>
+  <ColumnTitle>Solutions</ColumnTitle>
 
-            <FooterLink>For Pharmacies</FooterLink>
-            <FooterLink>For Doctors</FooterLink>
-            <FooterLink>For Patients</FooterLink>
-          </FooterColumn>
+  <FooterLink as={Link} to="/#for-pharmacies">
+    For Pharmacies
+  </FooterLink>
+
+  <FooterLink as={Link} to="/#for-clinicians">
+    For Doctors
+  </FooterLink>
+
+  <FooterLink as={Link} to="/#for-patients">
+    For Patients
+  </FooterLink>
+</FooterColumn>
 
           <FooterColumn>
             <ColumnTitle>Developers</ColumnTitle>
