@@ -7,6 +7,7 @@ import guidelineIcon from "../../../assets/guideline.png";
 import followupIcon from "../../../assets/followup.png";
 import labIcon from "../../../assets/lab-results.png";
 
+import RevealSection from "../../shared/RevealSection/RevealSection";
 import {
   SectionContainer,
   SectionContent,
@@ -62,8 +63,9 @@ const features = [
 
 const ForClinicians = () => {
   return (
-    <SectionContainer>
-      <SectionContent>
+    <RevealSection delay={180} direction="right">
+      <SectionContainer id="for-clinicians">
+        <SectionContent>
         <LeftSection>
           <CliniciansImage
             src={cliniciansImage}
@@ -118,6 +120,7 @@ const ForClinicians = () => {
         </RightSection>
       </SectionContent>
     </SectionContainer>
+    </RevealSection>
   );
 };
 

@@ -1,24 +1,12 @@
-import ForClinicians from "./components/home/ForClinicians/ForClinicians";
-import ForDevelopers from "./components/home/ForDevelopers/ForDevelopers";
-import ForPatients from "./components/home/ForPatients/ForPatients";
-import ForPharmacies from "./components/home/ForPharmacies/ForPharmacies";
-import Hero from "./components/home/Hero/Hero";
-import PharmacyFeatures from "./components/home/PharmacyFeatures/PharmacyFeatures";
-import SimpleSteps from "./components/home/SimpleSteps/SimpleSteps";
-import Navbar from "./components/shared/Navbar/Navbar";
+import RootRouter from "./components/routes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
-      <Navbar />
-      
-      <Hero />
-      <PharmacyFeatures />
-      <SimpleSteps />
-      <ForPharmacies />
-      <ForClinicians />
-      <ForDevelopers />
-      <ForPatients />
+      <RootRouter />
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

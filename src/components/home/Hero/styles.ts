@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {    keyframes } from "styled-components";
+
 
 export const HeroContainer = styled.section`
   width: 100%;
@@ -138,6 +139,33 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+const fadeUp = keyframes `
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+`;
+
 export const PrimaryButton = styled.button`
   width: 180px;
   height: 54px;
@@ -148,10 +176,31 @@ export const PrimaryButton = styled.button`
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.2s ease;
+  animation: ${fadeUp} 0.7s linear infinite both;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 0;
+  line-height: 1;
 
   &:hover {
-    opacity: 0.9;
+    background: #033a30;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(2, 44, 34, 0.25);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
   }
 
   /* TABLET */
@@ -184,6 +233,13 @@ export const SecondaryButton = styled.button`
 
   &:hover {
     background: #f8f8f8;
+    border-color: #022c22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   /* TABLET */
